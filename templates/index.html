@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Speech Recognition Flask - Python</title>
+</head>
+
+<body>
+    <div>
+        <h2>Speech Recognition With Python and Flask</h2>
+        <h4>Upload New File</h4>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="inputFile">
+            <br>
+            <label for="Upload FIle"></label>
+            <br>
+            <input type="submit" value="Transcribe" id="button">
+        </form>
+        {% if transcript !=""%}
+            <div>
+                <h1>Transcript</h1>
+                <p>{{transcript}}</p>
+            </div>
+        {%endif%}
+    </div>
+    <footer>
+        <h4>Developed using Flask and Python</h4>
+    </footer>
+
+</body>
+
+</html>
